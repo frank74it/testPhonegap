@@ -12,10 +12,11 @@ and open the template in the editor.
         <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+        <script src="phonegap.js"></script>
         <script>
             document.addEventListener("deviceready",onDeviceReady,false);//anche document.on("deviceready", function(){});
             function onDeviceReady() {
-                $('#submitbutton').on("touchend",function(){
+                $('#submitbutton').tap(function(){
                     var testoRicerca = $.trim($('#searchtext').val());
                     if (testoRicerca == "") return;
                     var opzRicerca = new ContactFindOptions();
@@ -26,7 +27,7 @@ and open the template in the editor.
                  contattoTrovato= function(risultati) {
                     var strHtml = "";
                     for (i=0;i<risultati.lenght;i++){
-                        strHtml += "<li>" + risultati[i].displayName + " , " + risultati[i].emails + "</li>";  
+                        strHtml += "<li>" + risultati[i].displayName +  "</li>";  
                     }
                     $('#risultati').html(strHtml);
                     $('#risultati').listview("refresh");
@@ -50,7 +51,7 @@ and open the template in the editor.
                 <ul data-role="listview" id="risultati" data-inset="true"></ul>
             </div>
             <div data-role="footer">
-                <h2>- test phonegap environment -</h2>
+                <h2>- test -</h2>
             </div>
         </div>
     </body>
