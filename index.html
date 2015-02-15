@@ -14,15 +14,15 @@ and open the template in the editor.
         <script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
         <script src="phonegap.js"></script>
         <script>
-            document.addEventListener("deviceready",onDeviceReady,false);//anche document.on("deviceready", function(){});
+            document.addEventListener("deviceready",onDeviceReady,false);
             function onDeviceReady() {
-                $('#submitbutton').tap(function(){
+                $('#submitbutton').on("touchend",function(){
                     var testoRicerca = $.trim($('#searchtext').val());
                     if (testoRicerca == "") return;
                     var opzRicerca = new ContactFindOptions();
                     opzRicerca.filter = testoRicerca;
                     opzRicerca.multiple = true;
-                    navigator.contacts.find(["displayName","emails"], contattoTrovato, erroreContatto,opzRicerca);
+                    navigator.contacts.find(["displayName","emails"], contattoTrovato, erroreContatto, opzRicerca);
                 });//end on touchend
                  contattoTrovato= function(risultati) {
                     var strHtml = "";
