@@ -17,7 +17,7 @@ and open the template in the editor.
             document.addEventListener("deviceready",onDeviceReady,false);
             function onDeviceReady() {
                 $('#submitbutton').on("touchend",function(){
-                    var testoRicerca = $.trim($('#searchtext').val());
+                  /*  var testoRicerca = $.trim($('#searchtext').val());
                     if (testoRicerca == "") return;
                     var opzRicerca = new ContactFindOptions();
                     opzRicerca.filter = testoRicerca;
@@ -32,10 +32,10 @@ and open the template in the editor.
                     $('#risultati').html(strHtml);
                     $('#risultati').listview("refresh");
                 };
-                erroreContatto =function(err) {
-                    navigator.notification.alert("Nessun contatto trovato",function(){});
-                };
-            }
+                erroreContatto =function(err) {*/
+                    navigator.notification.alert("Nessun contatto trovato");
+                }/*;*/);
+        }
         </script>
     </head>
     <body>
