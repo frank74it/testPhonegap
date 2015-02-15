@@ -16,7 +16,7 @@ and open the template in the editor.
             document.addEventListener("deviceready",onDeviceReady,false);//anche document.on("deviceready", function(){});
             function onDeviceReady() {
                 $('#submitbutton').on("touchend",function(){
-                    var testoRicerca = trim($('#searchtext').val());
+                    var testoRicerca = $.trim($('#searchtext').val());
                     if (testoRicerca == "") return;
                     var opzRicerca = new ContactFindOptions();
                     opzRicerca.filter = testoRicerca;
